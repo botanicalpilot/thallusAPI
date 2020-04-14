@@ -18,5 +18,8 @@ module.exports = app => {
     // delete crop by id
     router.delete("/:id", crops.delete);
 
+    // delete all crops
+    router.delete("/", crops.deleteAll);
+
     app.use('/api/crops', router);
 };

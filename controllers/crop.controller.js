@@ -78,7 +78,7 @@ exports.findOne = (req, res) => {
 
 // update crop by id
 exports.update = (req, res) => {
-    if(!res.body) {
+    if(!req.body) {
         return res.status(400).send({
             message: "Data to update can not be empty"
         });
@@ -122,6 +122,21 @@ exports.delete = (req, res) => {
                 message: `Could not delete crop with id: ${id}`
             });
         });
+};
+
+exports.deleteAll = (req, res) => {
+    Crop.deleteMany({})
+    .then(data => {
+        res.send({
+            message: `${data.deletedCount} Crops were deleted`
+        });
+    })
+    .catch(err => {
+        res.status(500).send({
+            message:
+              err.message || "Some error occurred in the process of deleting crops"
+        });
+    });
 };
 
 

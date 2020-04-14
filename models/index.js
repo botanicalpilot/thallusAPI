@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 // may not need this promise; depreciated in mongoose5
 mongoose.Promise = global.Promise;
+mongoose.set('useFindAndModify', false);
 
 const db = {};
 db.mongoose = mongoose;
