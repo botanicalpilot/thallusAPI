@@ -8,7 +8,7 @@ exports.create = (req, res) => {
         res.status(400).send({message: "Common name cannot be empty"});
     } else if (!req.body.scientific_name) {
         res.status(400).send({message: "Scientific name cannot be empty"});
-    return;
+        return;
     }
 
     // create crop
@@ -21,12 +21,12 @@ exports.create = (req, res) => {
         sow_outdoor_start: req.body.sow_outdoor_start,
         sow_outdoor_end: req.body.sow_outdoor_end,
         sow_outdoor_start_2: req.body.sow_outdoor_start_2, 
-        sow_outdoor_end_2: req.body. sow_outdoor_end_2,
+        sow_outdoor_end_2: req.body.sow_outdoor_end_2,
         start_all_season: req.body.start_all_season,
         start_outdoor_start: req.body.start_outdoor_start,
         start_outdoor_end: req.body.start_outdoor_end, 
-        start_outdoor_start_2: req.body. start_outdoor_start_2,
-        start_outdoor_end_2: req.body.start_outdoor_end_2, 
+        start_outdoor_start_2: req.body.start_outdoor_start_2,
+        start_outdoor_end_2: req.body.start_outdoor_end_2
     });
 
     crop
