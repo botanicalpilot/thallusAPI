@@ -45,7 +45,9 @@ exports.create = (req, res) => {
 // retrieve all crops from the db by common name
 exports.findAll = (req, res) => {
     const common_name = req.query.common_name;
-    var condition = common_name ? { common_name: { $regex: new RegExp(common_name), $options: "i"} } : {};
+    const scientific_name = req.query.scientific_name;
+    
+    var condition = common_name ? { common_name: { $regex: new RegExp(common_name), $options: "i"} } : {} || scientific_name ? { scientific_name: { $regex: new RegExp(scientific_name), $options: "i"} } : {};
 
     Crop.find(condition)
         .then(data => {
