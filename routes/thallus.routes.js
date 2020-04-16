@@ -4,7 +4,7 @@ module.exports = app => {
     var router = require("express").Router();
 
     // create a new crop
-    router.post("/", crops.create);
+    // router.post("/", crops.create);
 
     // get all crops by common_name
     router.get("/", crops.findAll);
@@ -13,13 +13,13 @@ module.exports = app => {
     router.get("/:id", crops.findOne);
 
     // update crop by id
-    router.put("/:id", crops.update);
+    // router.put("/:id", crops.update);
 
     // delete crop by id
-    router.delete("/:id", crops.delete);
+    // router.delete("/:id", crops.delete);
 
     // delete all crops
-    router.delete("/", crops.deleteAll);
+    // router.delete("/", crops.deleteAll);
 
     app.use('/api/crops', router);
 };
