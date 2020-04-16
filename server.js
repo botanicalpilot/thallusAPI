@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+res.header("Access-Control-Allow-Origin", "localhost:8080");
 
 
 const app = express();
