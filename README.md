@@ -4,7 +4,7 @@
 ## Thallus API is deployed at https://thallus-api.herokuapp.com/api/crops. 
 * GET all crops: https://thallus-api.herokuapp.com/api/crops
 * GET crop by id: https://thallus-api.herokuapp.com/api/crops/:id
- Return all crops with common name: https://thallus-api.herokuapp.com/api/crops?common_name=<common>
+* Return all crops with common name: https://thallus-api.herokuapp.com/api/crops?common_name=<common>
 * Return all crops with scientific name: https://thallus-api.herokuapp.com/api/crops?common_name=<scientific name>
 * Other CRUD functionality is unavailable to public. 
 
