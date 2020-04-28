@@ -1,7 +1,9 @@
 module.exports = app => {
     const crops = require("../controllers/crop.controller");
-
+    const cors = require('cors')
     var router = require("express").Router();
+
+    app.use(cors())
 
     // // create a new crop
     // router.post("/", crops.create);
