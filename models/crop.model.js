@@ -19,7 +19,9 @@ module.exports = mongoose => {
             start_outdoor_start: Date,
             start_outdoor_end: Date, 
             start_outdoor_start_2: Date,
-            start_outdoor_end_2: Date
+            start_outdoor_end_2: Date,
+
+            photo_ref: String
         }
     );
 
