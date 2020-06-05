@@ -26,7 +26,8 @@ exports.create = (req, res) => {
         start_outdoor_start: req.body.start_outdoor_start,
         start_outdoor_end: req.body.start_outdoor_end, 
         start_outdoor_start_2: req.body.start_outdoor_start_2,
-        start_outdoor_end_2: req.body.start_outdoor_end_2
+        start_outdoor_end_2: req.body.start_outdoor_end_2,
+        photo_ref: req.body.photo_ref
     });
 
     crop
