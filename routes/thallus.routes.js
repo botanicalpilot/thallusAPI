@@ -26,13 +26,13 @@ module.exports = app => {
 
     // update crop by id
     router.put("/:id", image.single('cropImage'), crops.update);
-    router.put("images/:id",image.single('cropImage'), crops.updateImage);
+    
 
     // delete crop by id
     router.delete("/:id", crops.delete);
 
     // delete all crops
-    router.delete("/", crops.deleteAll);
+    // router.delete("/", crops.deleteAll);
 
     app.use('/api/crops', router);
 };

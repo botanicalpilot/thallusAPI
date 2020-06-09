@@ -106,29 +106,6 @@ exports.update = (req, res) => {
         });
 };
 
-exports.updateImage = (req, res) => {
-    if(!req.file) {
-        return res.status(400).send({
-            message: "Data to update can not be empty"
-        });
-    }
-    const id = req.params.id;
-    Crop.findByIdAndUpdate(id, req.file, {useFindAndModify: false })
-    .then(data => {
-            if(!data) {
-                res.status(404).send({
-                    message: `Cannot update tutorial with id: ${id}. Crop may have not been found`
-                });
-            } else res.send({ message: `Crop with ${id} was updated`})
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: `Error updating crop with id: ${id}`
-            });
-        });
-
-}
-
 
 // delete crop by id
 exports.delete = (req, res) => {
