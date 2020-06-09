@@ -15,6 +15,9 @@ app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
+// make images dir public
+app.use('/images', express.static('images'));
+
 // parse requests on content type application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 

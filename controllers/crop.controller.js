@@ -1,6 +1,7 @@
 const db = require("../models");
 const Crop = db.crops;
 
+
 // create and save new crop
 exports.create = (req, res) => {
     // validate request
@@ -27,7 +28,7 @@ exports.create = (req, res) => {
         start_outdoor_end: req.body.start_outdoor_end, 
         start_outdoor_start_2: req.body.start_outdoor_start_2,
         start_outdoor_end_2: req.body.start_outdoor_end_2,
-        photo_ref: req.body.photo_ref
+        photo_ref: req.file.path
     });
 
     crop
@@ -43,7 +44,7 @@ exports.create = (req, res) => {
         })
 };
 
-// retrieve all crops from the db by common name
+// retrieve all crops from the db by common/scientific name
 exports.findAll = (req, res) => {
     const common_name = req.query.common_name;
     const scientific_name = req.query.scientific_name;
@@ -88,6 +89,7 @@ exports.update = (req, res) => {
     }
 
     const id = req.params.id;
+    console.log(req.file)
 
     Crop.findByIdAndUpdate(id, req.body, {useFindAndModify: false })
         .then(data => {
@@ -103,6 +105,30 @@ exports.update = (req, res) => {
             });
         });
 };
+
+exports.updateImage = (req, res) => {
+    if(!req.file) {
+        return res.status(400).send({
+            message: "Data to update can not be empty"
+        });
+    }
+    const id = req.params.id;
+    Crop.findByIdAndUpdate(id, req.file, {useFindAndModify: false })
+    .then(data => {
+            if(!data) {
+                res.status(404).send({
+                    message: `Cannot update tutorial with id: ${id}. Crop may have not been found`
+                });
+            } else res.send({ message: `Crop with ${id} was updated`})
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: `Error updating crop with id: ${id}`
+            });
+        });
+
+}
+
 
 // delete crop by id
 exports.delete = (req, res) => {
