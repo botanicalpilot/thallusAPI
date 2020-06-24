@@ -1,6 +1,6 @@
 # Thallus API
-* Thallus API returns seed sowing and gardening information used by the Gibber app (currently under development). The database holds information for gardening in zone 8 and is intended to be used by gardeners in Portland, Oregon. 
-* Built with NodeJs, Express, and Mongooose. 
+* Thallus API returns seed sowing and gardening information used by the Gibber app. The database holds information for gardening in zone 8 and is intended to be used by gardeners in Portland, Oregon. 
+* Built with Node.js, Express, and Mongooose. 
 ## Thallus API is deployed at https://thallus-api.herokuapp.com/api/crops. 
 * GET all crops: https://thallus-api.herokuapp.com/api/crops
 * GET crop by id: https://thallus-api.herokuapp.com/api/crops/:id
